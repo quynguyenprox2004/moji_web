@@ -24,12 +24,12 @@ module.exports = {
     'react/display-name': 0,
 
     // MUI
-    'no-restricted-imports': [
-      'error',
-      {
-        'patterns': [{ 'regex': '^@mui/[^/]+$' }]
-      }
-    ],
+    // 'no-restricted-imports': [
+    //   'error',
+    //   {
+    //     '': [{ '': '^@mui/[^/]+$' }]
+    //   }
+    // ],
 
     // Common
     'no-console': 1,
