@@ -3,6 +3,10 @@ import { red } from '@mui/material/colors'
 
 // Create a theme instance.
 const theme = createTheme({
+  moji: {
+    appBarHeight: '48px',
+    boardBarHeight: '58px'
+  },
   cssVariables: true,
   palette: {
     mode: 'light',

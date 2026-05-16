@@ -1,24 +1,35 @@
-import Button from '@mui/material/Button'
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
-import ThreeDRotation from '@mui/icons-material/ThreeDRotation'
-import HomeIcon from '@mui/icons-material/Home'
-// import { pink } from '@mui/material/colors'
-import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
 
 function App() {
   return (
-    <>
-      <div>trungquandev</div>
-      <Typography variant="body2" color="text.secondary">Test Typography</Typography>
-
-      <Button variant="text">Hello world</Button>
-      <Button variant="contained">Hello world</Button>
-      <Button variant="outlined">Hello world</Button>
-      <br />
-      <AccessAlarmIcon />
-      <ThreeDRotation />
-      <HomeIcon color="primary" />
-    </>
+    <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
+      <Box sx={{
+        backgroundColor: 'primary.light',
+        width: '100%',
+        height: (theme) => theme.moji.appBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}></Box>
+      <Box sx={{
+        backgroundColor: 'primary.dark',
+        width: '100%',
+        height: (theme) => theme.moji.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx={{
+        backgroundColor: 'primary.main',
+        width: '100%',
+        height: (theme) => `calc(100vh - ${theme.moji.appBarHeight} - ${theme.moji.boardBarHeight})`,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Content
+      </Box>
+    </Container>
   )
 }
 
