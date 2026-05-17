@@ -3,18 +3,19 @@ import Chip from '@mui/material/Chip'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 
 const MENU_STYLES = {
-  color: 'primary.main',
-  bgcolor: 'white',
+  color: 'white',
+  bgcolor: 'transparent',
   border: 'none',
   paddingX: '5px',
   borderRadius: '4px',
-  '& .MuiSvgIcon-root': {
-    color: 'primary.main'
+  '.MuiSvgIcon-root': {
+    color: 'white'
   },
   '&:hover': {
     bgcolor: 'primary.50'
   }
 }
+
 
 function BoardBar() {
   return (
@@ -27,7 +28,8 @@ function BoardBar() {
       gap: 2,
       paddingX: 2,
       overflowX: 'auto',
-      borderTop: '1px solid #00bfa5'
+      borderTop: '1px solid #00bfa5',
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip
@@ -36,8 +38,6 @@ function BoardBar() {
           label="Chuyên đề tốt nghiệp"
           clickable
         />
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
       </Box>
     </Box>
   )
