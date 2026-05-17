@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import Card from './Card/Card'
 
-function ListCards() {
+function ListCards({ cards }) {
   return (
     <Box sx={{
       p: '0 5px',
@@ -12,15 +12,15 @@ function ListCards() {
       overflowX: 'hidden',
       overflowY: 'auto',
       maxHeight: (theme) => `calc(
-        ${theme.moji.boardContentHeght} -
-        ${theme.spacing(5)} -
-        ${theme.moji.colummnHeaderHeight} -
-        ${theme.moji.colummnFooterHeight}
+          ${theme.moji.boardContentHeight} -
+          ${theme.spacing(5)} -
+          ${theme.moji.columnHeaderHeight} -
+          ${theme.moji.columnFooterHeight}
         )`,
       '&::-webkit-scrollbar-thumb': { backgroundColor: '#ced0da' },
-      '&::-webkit-scrollbar-thumb: hover': { backgroundColor: '#bfc2cf' }
+      '&::-webkit-scrollbar-thumb:hover': { backgroundColor: '#bfc2cf' }
     }}>
-      <Card />
+      {cards?.map(card => <Card key={card._id} card={card} />)}
     </Box >
   )
 }
